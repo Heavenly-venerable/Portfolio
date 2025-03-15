@@ -8,8 +8,8 @@ import Navbar from "./components/Section/Navbar.vue"
 </script>
 
 <template>
+  <Navbar />
   <div class="w-full h-full bg-navy-dark md:px-16">
-    <Navbar />
     <div class="pt-16">
       <Hero />
       <About />
