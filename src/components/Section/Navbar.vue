@@ -34,7 +34,7 @@ onUnmounted(() => {
     isHidden ? '-translate-y-full' : 'translate-y-0'
   ]">
     <nav class="p-4 flex justify-between items-center md:p-6">
-      <h1 class="text-green-dark text-3xl font-bold">Hariyanto Saputra</h1>
+      <h1 class="text-green-dark text-3xl font-bold">Portfolio</h1>
       <button class="text-green-dark md:hidden" @click="toggleMenu">
         <svg v-if="!isMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg">

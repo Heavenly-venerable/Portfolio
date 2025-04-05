@@ -11,7 +11,7 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="mt-8 p-8 shadow-md border border-slate-dark rounded w-full bg-light-navy-dark">
+  <div class="mt-8 p-8 shadow-md border border-slate-dark rounded-lg w-full bg-light-navy-dark">
     <span class="text-green-dark text-xs font-mono font-extralight">Featured Project</span>
     <h3 class="text-white tracking-wide hover:text-green-dark text-xl font-black">{{ props.title }}</h3>
     <div class="text-slate-dark">

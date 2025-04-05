@@ -4,6 +4,20 @@ import Card from "../Card.vue"
 
 const cardProperties = [
   {
+    "title": "SliceUI",
+    "description": "A website that contains a collection of slice UI exercises that I have worked on, including various components, web pages, and other interface elements as a medium for design exploration and skill development in the UI/UX field.",
+    "stack": "Nuxt Tailwindcss VueUse",
+    "hasUrl": true,
+    "url": "https://slice-ui-hv.vercel.app/"
+  },
+  {
+    "title": "Netura",
+    "description": "A school website providing essential information for students, parents, and staff. Features include announcements, event schedules, academic resources, faculty profiles, and an interactive gallery. It also supports online admissions, grade tracking, and a contact portal for seamless communication.",
+    "stack": "Nuxt Mongoose Tailwindcss primevue",
+    "hasUrl": true,
+    "url": "https://netura.vercel.app/"
+  },
+  {
     "title": "SahazNetwork",
     "description": "A landing page for a WiFi provider designed to showcase internet plans and attract new customers. View available packages, pricing, and service coverage areas. Sign up easily through a quick registration form and explore customer testimonials for added credibility.",
     "stack": "Vue Tailwindcss AOS",
@@ -16,13 +30,6 @@ const cardProperties = [
     "stack": "Nuxt Mongoose Tailwindcss ",
     "hasUrl": true,
     "url": "https://rt-hblog.vercel.app/"
-  },
-  {
-    "title": "Netura",
-    "description": "A school website providing essential information for students, parents, and staff. Features include announcements, event schedules, academic resources, faculty profiles, and an interactive gallery. It also supports online admissions, grade tracking, and a contact portal for seamless communication.",
-    "stack": "Nuxt Mongoose Tailwindcss primevue",
-    "hasUrl": true,
-    "url": "https://netura.vercel.app/"
   },
 ]
 </script>
