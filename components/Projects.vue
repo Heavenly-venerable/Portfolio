@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import Container from "../Container.vue";
-import Card from "../Card.vue"
-
 const cardProperties = [
   {
     "title": "SliceUI",
@@ -36,14 +33,16 @@ const cardProperties = [
 
 <template>
   <Container id="projects">
-    <div class="flex item-center gap-4">
-      <h3 class="text-lightest-slate-dark text-2xl font-bold">
-        <span class="text-green-dark text-base font-mono font-extralight"> 02. </span>
-        Some Things I’ve Built
-      </h3>
-      <div class="flex-1 h-[1px] self-center bg-lightest-navy-dark"></div>
-    </div>
-    <Card v-for="card in cardProperties" :key="card.title" :title="card.title" :description="card.description"
-      :stack="card.stack" :url="card.url" :hasUrl="card.hasUrl" />
+    <MotionGroup preset="slideVisibleOnceBottom" :duration="1000" :delay="100">
+      <div class="flex item-center gap-4">
+        <h3 class="text-lightest-slate-dark text-2xl font-bold">
+          <span class="text-green-dark text-base font-mono font-extralight"> 02. </span>
+          Some Things I’ve Built
+        </h3>
+        <div class="flex-1 h-[1px] self-center bg-lightest-navy-dark"></div>
+      </div>
+      <Card v-for="card in cardProperties" :key="card.title" :title="card.title" :description="card.description"
+        :stack="card.stack" :url="card.url" :hasUrl="card.hasUrl" />
+    </MotionGroup>
   </Container>
 </template>

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
-
+const { scrollTo } = useScrollTo()
 const isHidden = ref(false)
 const isMenuOpen = ref(false)
 let lastScrollTop = 0
@@ -46,21 +45,26 @@ onUnmounted(() => {
         </svg>
       </button>
       <ul class="hidden text-green-dark font-mono md:flex space-x-4">
-        <li><a href="#about" class="text-lightest-slate-dark"><span class="text-green-dark">01. </span>About</a></li>
-        <li><a href="#projects" class="text-lightest-slate-dark"><span class="text-green-dark">02. </span>Projects</a>
+        <li><a @click.prevent="scrollTo('about')" href="#about" class="text-lightest-slate-dark"><span
+              class="text-green-dark">01. </span>About</a></li>
+        <li><a @click.prevent="scrollTo('projects')" href="#projects" class="text-lightest-slate-dark"><span
+              class="text-green-dark">02. </span>Projects</a>
         </li>
-        <li><a href="#contact" class="text-lightest-slate-dark"><span class="text-green-dark">03. </span>Contact</a>
+        <li><a @click.prevent="scrollTo('contact')" href="#contact" class="text-lightest-slate-dark"><span
+              class="text-green-dark">03. </span>Contact</a>
         </li>
       </ul>
     </nav>
     <transition name="mobile-menu">
       <div id="mobileMenu" v-if="isMenuOpen"
         class="absolute w-full bg-navy-dark text-green-dark font-mono shadow-md flex flex-col items-center space-y-4 py-4 md:hidden">
-        <a href="#about" class="flex flex-col items-center text-lightest-slate-dark" @click="closeMenu"><span
-            class="text-green-dark">01.</span>About</a>
-        <a href="#projects" class="flex flex-col items-center text-lightest-slate-dark" @click="closeMenu"><span
+        <a @click.prevent="scrollTo('about')" href="#about" class="flex flex-col items-center text-lightest-slate-dark"
+          @click="closeMenu"><span class="text-green-dark">01.</span>About</a>
+        <a @click.prevent="scrollTo('projects')" href="#projects"
+          class="flex flex-col items-center text-lightest-slate-dark" @click="closeMenu"><span
             class="text-green-dark">02.</span>Projects</a>
-        <a href="#contact" class="flex flex-col items-center text-lightest-slate-dark" @click="closeMenu"><span
+        <a @click.prevent="scrollTo('contact')" href="#contact"
+          class="flex flex-col items-center text-lightest-slate-dark" @click="closeMenu"><span
             class="text-green-dark">03.</span>Contact</a>
       </div>
     </transition>
