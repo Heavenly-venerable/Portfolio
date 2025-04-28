@@ -33,14 +33,14 @@ const cardProperties = [
 
 <template>
   <Container id="projects">
-    <MotionGroup preset="slideVisibleOnceBottom" :duration="1000" :delay="100">
-      <div class="flex item-center gap-4">
-        <h3 class="text-lightest-slate-dark text-2xl font-bold">
-          <span class="text-green-dark text-base font-mono font-extralight"> 02. </span>
-          Some Things I’ve Built
-        </h3>
-        <div class="flex-1 h-[1px] self-center bg-lightest-navy-dark"></div>
-      </div>
+    <div v-motion-slide-visible-once-bottom :duration="700" class="flex item-center gap-4">
+      <h3 class="text-lightest-slate-dark text-2xl font-bold">
+        <span class="inline-block text-green-dark text-base font-mono font-extralight"> 02. </span>
+        Some Things I’ve Built
+      </h3>
+      <div class="flex-1 h-[1px] self-center bg-lightest-navy-dark"></div>
+    </div>
+    <MotionGroup preset="slideVisibleOnceBottom" :duration="700">
       <Card v-for="card in cardProperties" :key="card.title" :title="card.title" :description="card.description"
         :stack="card.stack" :url="card.url" :hasUrl="card.hasUrl" />
     </MotionGroup>
