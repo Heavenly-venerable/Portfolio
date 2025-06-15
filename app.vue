@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <div class="w-full h-full bg-navy-dark md:px-16">
+  <div class="w-full h-full bg-background md:px-16 dark:bg-background-dark">
     <div class="pt-16">
       <Hero />
       <About />

@@ -5,13 +5,13 @@ const skills = ["Javascript (ES6+)", "Typescript", "Vue.js", "Nuxt", "Node.js", 
 <template>
   <Container id="about">
     <div v-motion-slide-visible-once-bottom :duration="700" class="flex item-center gap-4">
-      <h3 class="text-lightest-slate-dark text-2xl font-bold">
-        <span class="inline-block text-green-dark text-base font-mono font-extralight"> 01. </span>
+      <h3 class="text-neutral-900 text-2xl font-bold">
+        <span class="inline-block text-green-500 text-base font-mono font-extralight"> 01. </span>
         About Me
       </h3>
-      <div class="flex-1 h-[1px] self-center bg-lightest-navy-dark"></div>
+      <div class="flex-1 h-[1px] self-center bg-neutral-900"></div>
     </div>
-    <div class="text-slate-dark">
+    <div class="text-neutral-600">
       <p v-motion-slide-visible-once-bottom :duration="700" class="mt-8">
         Hello! My name is Hariyanto Saputra, and I love building things for the web. My interest in web development
         started back
@@ -27,7 +27,7 @@ const skills = ["Javascript (ES6+)", "Typescript", "Vue.js", "Nuxt", "Node.js", 
         Here are a few technologies I’ve been working with recently:
       </p>
       <ul v-motion-slide-visible-once-bottom :duration="700" class="grid grid-cols-2 px-4 mt-4 gap-2 text-sm">
-        <li v-for="skill in skills" :key="skill" class="list-disc text-green-dark"><span class="text-slate-dark">{{
+        <li v-for="skill in skills" :key="skill" class="list-disc text-green-500"><span class="text-neutral-600">{{
           skill }}</span></li>
       </ul>
     </div>
