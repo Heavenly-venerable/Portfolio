@@ -4,20 +4,20 @@
 <template>
   <Container>
     <span v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :duration="700"
-      class="px-4 py-1 mb-2 inline-block bg-green-100 text-green-600 text-md font-mono font-extralight rounded-full">Hi,
+      class="px-4 py-1 mb-2 inline-block bg-green-100 text-green-600 text-md font-mono font-extralight rounded-full dark:bg-green-200 dark:text-green-600">Hi,
       my
       name
       is</span>
     <h1 v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :duration="700" :delay="200"
-      class="text-neutral-900 text-4xl font-bold">
+      class="text-zinc-900 text-4xl font-bold dark:text-zinc-100">
       Hariyanto Saputra.
     </h1>
     <h2 v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :duration="700" :delay="300"
-      class="text-neutral-800 text-4xl font-bold">
+      class="text-zinc-800 text-4xl font-bold dark:text-zinc-300">
       This is where my ideas live.
     </h2>
     <p v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :duration="700" :delay="400"
-      class="mt-4 text-neutral-600">
+      class="mt-4 text-zinc-600 dark:text-zinc-500">
       <span class="text-green-500">I’m a software engineer </span>passionate
       about crafting innovative and meaningful digital experiences. This is
       where my ideas live—where creativity meets code to build intuitive,

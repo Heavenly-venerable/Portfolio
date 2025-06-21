@@ -34,11 +34,11 @@ const cardProperties = [
 <template>
   <Container id="projects">
     <div v-motion-slide-visible-once-bottom :duration="700" class="flex item-center gap-4">
-      <h3 class="text-neutral-900 text-2xl font-bold">
+      <h3 class="text-zinc-900 text-2xl font-bold dark:text-zinc-300">
         <span class="inline-block text-green-500 text-base font-mono font-extralight"> 02. </span>
         Some Things I’ve Built
       </h3>
-      <div class="flex-1 h-[1px] self-center bg-neutral-900"></div>
+      <div class="flex-1 h-[1px] self-center bg-zinc-900 dark:bg-zinc-300"></div>
     </div>
     <MotionGroup preset="slideVisibleOnceBottom" :duration="700">
       <Card v-for="card in cardProperties" :key="card.title" :title="card.title" :description="card.description"
