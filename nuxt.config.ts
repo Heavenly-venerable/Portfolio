@@ -31,5 +31,14 @@ export default defineNuxtConfig({
       ]
     }
   },
-  modules: ['@nuxtjs/tailwindcss', '@vueuse/motion/nuxt']
+  lucide: {
+    namePrefix: 'Icon'
+  },
+  colorMode: {
+    classSuffix: '',
+    preference: 'system',
+    fallback: 'light',
+    storageKey: 'nuxt-color-mode',
+  },
+  modules: ['@nuxtjs/tailwindcss', '@vueuse/motion/nuxt', "nuxt-lucide-icons", "@nuxtjs/color-mode"]
 })

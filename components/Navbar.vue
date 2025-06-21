@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const colorMode = useColorMode()
 const { scrollTo } = useScrollTo()
 const isHidden = ref(false)
 const isMenuOpen = ref(false)
@@ -29,31 +30,38 @@ onUnmounted(() => {
 
 <template>
   <header id="navbar" :class="[
-    'fixed top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 z-50 md:px-16',
+    'fixed top-0 left-0 w-full bg-white shadow-md transition-transform duration-300 z-50 md:px-16 dark:bg-slate-900',
     isHidden ? '-translate-y-full' : 'translate-y-0'
   ]">
     <nav class="py-4 px-6 flex justify-between items-center md:p-6">
       <h1 class="text-green-500 text-3xl font-bold">Portfolio</h1>
-      <button class="text-green-500 md:hidden" @click="toggleMenu">
-        <svg v-if="!isMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-        <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-      <ul class="hidden text-green-500 font-mono md:flex space-x-4">
-        <li><a @click.prevent="scrollTo('about')" href="#about" class="text-neutral-900"><span
-              class="text-green-500">01. </span>About</a></li>
-        <li><a @click.prevent="scrollTo('projects')" href="#projects" class="text-neutral-900"><span
-              class="text-green-500">02. </span>Projects</a>
-        </li>
-        <li><a @click.prevent="scrollTo('contact')" href="#contact" class="text-neutral-900"><span
-              class="text-green-500">03. </span>Contact</a>
-        </li>
-      </ul>
+      <div class="flex gap-6">
+        <button @click="colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'"
+          class="text-neutral-600">
+          <IconSun v-if="colorMode.preference === 'dark'" />
+          <IconMoon v-else />
+        </button>
+        <button class="text-green-500 md:hidden dark:text-red-500" @click="toggleMenu">
+          <svg v-if="!isMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+          <svg v-else class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+        <ul class="hidden text-green-500 font-mono md:flex space-x-4">
+          <li><a @click.prevent="scrollTo('about')" href="#about" class="text-neutral-900"><span
+                class="text-green-500">01. </span>About</a></li>
+          <li><a @click.prevent="scrollTo('projects')" href="#projects" class="text-neutral-900"><span
+                class="text-green-500">02. </span>Projects</a>
+          </li>
+          <li><a @click.prevent="scrollTo('contact')" href="#contact" class="text-neutral-900"><span
+                class="text-green-500">03. </span>Contact</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <transition name="mobile-menu">
       <div id="mobileMenu" v-if="isMenuOpen"
