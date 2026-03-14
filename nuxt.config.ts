@@ -40,5 +40,11 @@ export default defineNuxtConfig({
     fallback: 'light',
     storageKey: 'nuxt-color-mode',
   },
-  modules: ['@nuxtjs/tailwindcss', '@vueuse/motion/nuxt', "nuxt-lucide-icons", "@nuxtjs/color-mode"]
+  modules: ['@nuxtjs/tailwindcss', '@vueuse/motion/nuxt', "nuxt-lucide-icons", "@nuxtjs/color-mode", "nuxt-auth-utils"],
+  runtimeConfig: {
+    jwtSecret: process.env.JWT_SECRET,
+    session: {
+      maxAge: 60 * 60 * 24 * 7 // 1 week
+    }
+  }
 })

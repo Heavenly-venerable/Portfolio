@@ -1,5 +1,11 @@
 <script setup lang="ts">
-const skills = ["Javascript (ES6+)", "Typescript", "Vue.js", "Nuxt", "Node.js", "Express.js"]
+const { skills, fetchSkills } = useSkills()
+const { profile, fetchProfile } = useProfile()
+
+onMounted(() => {
+  fetchProfile()
+  fetchSkills()
+})
 </script>
 
 <template>
@@ -13,7 +19,8 @@ const skills = ["Javascript (ES6+)", "Typescript", "Vue.js", "Nuxt", "Node.js", 
     </div>
     <div class="text-zinc-600 dark:text-zinc-500">
       <p v-motion-slide-visible-once-bottom :duration="700" class="mt-8">
-        Hello! My name is Hariyanto Saputra, and I love building things for the web. My interest in web development
+        Hello! My name is Hariyanto Saputra, and I love building things for the web. My interest in
+        web development
         started back
         in 2023 when I first experimented with coding—what began as a simple attempt to customize a website quickly
         turned into a passion for creating intuitive and dynamic user experiences.
@@ -27,9 +34,9 @@ const skills = ["Javascript (ES6+)", "Typescript", "Vue.js", "Nuxt", "Node.js", 
         Here are a few technologies I’ve been working with recently:
       </p>
       <ul v-motion-slide-visible-once-bottom :duration="700" class="grid grid-cols-2 px-4 mt-4 gap-2 text-sm">
-        <li v-for="skill in skills" :key="skill" class="list-disc text-green-500">
+        <li v-for="skill in skills" :key="skill.id" class="list-disc text-green-500">
           <span class="text-zinc-600 dark:text-zinc-500">
-            {{ skill }}
+            {{ skill.name }}
           </span>
         </li>
       </ul>
