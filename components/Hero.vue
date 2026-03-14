@@ -4,7 +4,7 @@
 <template>
   <Container>
     <span v-motion :initial="{ opacity: 0, y: 100 }" :enter="{ opacity: 1, y: 0 }" :duration="700"
-      class="px-4 py-1 mb-2 inline-block bg-green-100 text-green-600 text-md font-mono font-extralight rounded-full dark:bg-green-200 dark:text-green-600">Hi,
+      class="px-4 py-1 mb-2 inline-block bg-green-100 text-green-600 text-md font-mono font-extralight rounded-full dark:bg-green-900 dark:text-green-300">Hi,
       my
       name
       is</span>
